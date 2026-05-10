@@ -1,21 +1,51 @@
 version: "3.9"  # Compose file version
 
+# docker-compose.yml
+# यो file ले PostgreSQL database container run/configure गर्छ
+
+# services भित्र project मा चल्ने containers define गरिन्छ
 services:
+
+  # db नामको service define gareko
+  # यो हाम्रो PostgreSQL database service हो
   db:
-    image: postgres:15  # PostgreSQL image
-    container_name: postgres_db  # Container name
 
-    restart: always  # Auto-restart container
+    # Docker Hub बाट PostgreSQL को latest image use gareko
+    # image = container बनाउन प्रयोग हुने base template
+    image: postgres:16
 
+    # Container को custom name define gareko
+    # Docker Desktop/CLI मा यही नाम देखिन्छ
+    container_name: week2_postgres_db
+
+    # Environment variables .env file बाट load गर्ने
+    # Example: POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB, POSTGRES_PORT
     env_file:
-      - .env  # Load environment variables
+      - .env
 
+    # Port mapping define gareko
+    # Left side  = host machine/laptop को port
+    # Right side = container भित्र PostgreSQL को default port 5432
     ports:
-      - "${POSTGRES_PORT}:5432"  # Map host:container port
+      - "${POSTGRES_PORT}:5432"
 
+    # Volumes define gareko
+    # Volume = data/file persist वा mount गर्न use हुन्छ
     volumes:
-      - postgres_data:/var/lib/postgresql/data  # Persist DB data
-      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql  # Auto-run SQL on first start
 
+      # Local seed.sql file container भित्र init folder मा mount gareko
+      # PostgreSQL container first time start हुँदा यो SQL file automatically run हुन्छ
+      # यसबाट tables/data initially create/insert गर्न सकिन्छ
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql
+
+      # Named volume postgres_data लाई PostgreSQL data directory मा mount gareko
+      # यसले database data container delete/restart गरे पनि preserve गर्छ
+      - postgres_data:/var/lib/postgresql/data
+
+
+# Named volumes define गर्ने section
 volumes:
-  postgres_data:  # Named volume for DB storage
+
+  # postgres_data नामको Docker volume create/use हुन्छ
+  # यो PostgreSQL database files permanently store गर्न use हुन्छ
+  postgres_data:
