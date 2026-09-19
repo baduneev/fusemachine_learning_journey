@@ -1,0 +1,8 @@
+google-genai
+python-dotenv
+pydantic
+pypdf
+langchain-text-splitters
+sentence-transformers
+chromadb
+openai

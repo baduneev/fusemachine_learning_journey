@@ -1,0 +1,15 @@
+flowchart TD
+    U["User question"] --> A["Single Gemini agent"]
+    C["Bounded evidence and recent actions"] --> A
+    A --> D{"Model chooses action"}
+    D --> T["Search or read source"]
+    T --> W["W15 Chroma and reranker / PDF search"]
+    W --> O["Validate and cap observation"]
+    D --> V["Verify claim citations and quotes"]
+    V --> O
+    O --> C
+    D --> F{"Final claims verified?"}
+    F -->|"No"| O
+    F -->|"Yes"| R["Cited answer"]
+    D --> Q["Clarify or abstain"]
+    A -->|"8-step cap / model error"| S["Safe stop"]

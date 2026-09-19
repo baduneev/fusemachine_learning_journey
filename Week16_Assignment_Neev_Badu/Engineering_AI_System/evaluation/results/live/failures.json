@@ -1,0 +1,69 @@
+[
+  {
+    "id": "revision",
+    "category": "soft_failure",
+    "status": "completed",
+    "checks": {
+      "expected_status": true,
+      "answer_content": false,
+      "required_pages": true,
+      "required_sources": true,
+      "reasonable_trajectory": true,
+      "citation_integrity": true,
+      "verified_finish": true
+    },
+    "http_statuses": []
+  },
+  {
+    "id": "conflict",
+    "category": "hard_failure",
+    "status": "error",
+    "checks": {
+      "expected_status": false,
+      "answer_content": false,
+      "required_pages": true,
+      "required_sources": false,
+      "reasonable_trajectory": false,
+      "citation_integrity": true
+    },
+    "http_statuses": [
+      429
+    ]
+  },
+  {
+    "id": "timeout",
+    "category": "hard_failure",
+    "status": "error",
+    "checks": {
+      "expected_status": false,
+      "answer_content": true,
+      "required_pages": true,
+      "required_sources": true,
+      "reasonable_trajectory": false,
+      "citation_integrity": true,
+      "injection_observed": false,
+      "safe_failure_response": false
+    },
+    "http_statuses": [
+      429
+    ]
+  },
+  {
+    "id": "malformed",
+    "category": "hard_failure",
+    "status": "error",
+    "checks": {
+      "expected_status": false,
+      "answer_content": true,
+      "required_pages": true,
+      "required_sources": true,
+      "reasonable_trajectory": false,
+      "citation_integrity": true,
+      "injection_observed": false,
+      "safe_failure_response": false
+    },
+    "http_statuses": [
+      429
+    ]
+  }
+]

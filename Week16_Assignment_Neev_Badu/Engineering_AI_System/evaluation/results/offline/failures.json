@@ -1,0 +1,46 @@
+[
+  {
+    "id": "timeout",
+    "category": "hard_failure",
+    "status": "abstained",
+    "checks": {
+      "expected_status": true,
+      "answer_content": true,
+      "required_pages": true,
+      "required_sources": true,
+      "reasonable_trajectory": true,
+      "citation_integrity": true,
+      "injection_observed": true,
+      "safe_failure_response": true
+    },
+    "http_statuses": []
+  },
+  {
+    "id": "step_limit",
+    "category": "hard_failure",
+    "status": "max_steps",
+    "checks": {
+      "expected_status": true,
+      "answer_content": true,
+      "required_pages": true,
+      "required_sources": true,
+      "reasonable_trajectory": true,
+      "citation_integrity": true
+    },
+    "http_statuses": []
+  },
+  {
+    "id": "model_failure",
+    "category": "hard_failure",
+    "status": "error",
+    "checks": {
+      "expected_status": true,
+      "answer_content": true,
+      "required_pages": true,
+      "required_sources": true,
+      "reasonable_trajectory": true,
+      "citation_integrity": true
+    },
+    "http_statuses": []
+  }
+]

@@ -1,0 +1,20 @@
+test_fabricated_quote_is_rejected_and_repaired (evaluation.test_agent.AgentTests.test_fabricated_quote_is_rejected_and_repaired) ... ok
+test_failure_taxonomy_detects_soft_and_cascading (evaluation.test_agent.AgentTests.test_failure_taxonomy_detects_soft_and_cascading) ... ok
+test_finish_requires_verification (evaluation.test_agent.AgentTests.test_finish_requires_verification) ... ok
+test_fixture_quotes_match_real_week15_pdf (evaluation.test_agent.AgentTests.test_fixture_quotes_match_real_week15_pdf) ... ok
+test_gemini_rest_contract_and_usage (evaluation.test_agent.AgentTests.test_gemini_rest_contract_and_usage) ... ok
+test_iteration_cap (evaluation.test_agent.AgentTests.test_iteration_cap) ... ok
+test_malformed_batch_is_discarded (evaluation.test_agent.AgentTests.test_malformed_batch_is_discarded) ... ok
+test_missing_usage_not_faked (evaluation.test_agent.AgentTests.test_missing_usage_not_faked) ... ok
+test_modified_claim_cannot_reuse_verification (evaluation.test_agent.AgentTests.test_modified_claim_cannot_reuse_verification) ... ok
+test_new_search_invalidates_verified_snapshot (evaluation.test_agent.AgentTests.test_new_search_invalidates_verified_snapshot) ... ok
+test_provider_total_includes_more_than_input_output (evaluation.test_agent.AgentTests.test_provider_total_includes_more_than_input_output) ... ok
+test_source_path_not_executed (evaluation.test_agent.AgentTests.test_source_path_not_executed) ... ok
+test_timeout_abstains (evaluation.test_agent.AgentTests.test_timeout_abstains) ... ok
+test_unknown_action_and_wrong_argument_type (evaluation.test_agent.AgentTests.test_unknown_action_and_wrong_argument_type) ... ok
+test_unknown_citation_rejected (evaluation.test_agent.AgentTests.test_unknown_citation_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.155s
+
+OK

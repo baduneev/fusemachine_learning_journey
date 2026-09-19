@@ -1,0 +1,141 @@
+{
+  "summary": {
+    "mode": "live",
+    "model": "gemini-3.5-flash-lite",
+    "created_utc": "2026-09-19T12:14:15.102412+00:00",
+    "queries": 1,
+    "task_completion_rate": 1.0,
+    "expected_behavior_rate": 1.0,
+    "tool_call_correctness": 1.0,
+    "mean_trajectory_length": 3,
+    "pricing": {
+      "input_usd_per_million": null,
+      "output_usd_per_million": null
+    }
+  },
+  "queries": [
+    {
+      "id": "revision",
+      "query": "Verify the claim that Selenium controls Chromium and correct it if necessary.",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 2,
+      "tool_calls": 2,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 4.4699,
+      "status": "completed",
+      "answer": "- The runner shall launch and control Chromium through Playwright. [E1]",
+      "claims": [
+        {
+          "text": "The runner shall launch and control Chromium through Playwright.",
+          "source_id": "E1",
+          "quote": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 336,
+          "action": "search_documents",
+          "args": {
+            "query": "Selenium controls Chromium"
+          },
+          "note": "Searching the documents to verify the claim about Selenium controlling Chromium.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "count": 2
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 698,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "The runner shall launch and control Chromium through Playwright.",
+                "source_id": "E1",
+                "quote": "The runner shall launch and control Chromium through Playwright."
+              }
+            ]
+          },
+          "note": "Verifying the claim based on the evidence showing Playwright controls Chromium, correcting the assertion about Selenium.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 946,
+          "action": "finish",
+          "args": {},
+          "note": "The claim that Selenium controls Chromium has been successfully verified against the evidence and corrected to state that the runner launches and controls Chromium through Playwright.",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "sample.pdf",
+          "page": 2,
+          "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+        }
+      },
+      "usage": {
+        "input_tokens": 1564,
+        "output_tokens": 209,
+        "total_tokens": 1773,
+        "known_total_tokens": 1773,
+        "accounting_complete": true,
+        "kind": "provider_reported",
+        "calls": [
+          {
+            "input_tokens": 439,
+            "output_tokens": 50,
+            "thought_tokens": 0,
+            "total_tokens": 489
+          },
+          {
+            "input_tokens": 540,
+            "output_tokens": 108,
+            "thought_tokens": 0,
+            "total_tokens": 648
+          },
+          {
+            "input_tokens": 585,
+            "output_tokens": 51,
+            "thought_tokens": 0,
+            "total_tokens": 636
+          }
+        ]
+      },
+      "estimated_cost_usd": null
+    }
+  ]
+}

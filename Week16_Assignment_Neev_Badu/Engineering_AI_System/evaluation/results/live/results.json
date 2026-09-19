@@ -1,0 +1,741 @@
+{
+  "summary": {
+    "mode": "live",
+    "model": "gemini-3.5-flash-lite",
+    "created_utc": "2026-09-19T12:23:59.818559+00:00",
+    "queries": 8,
+    "task_completion_rate": 0.25,
+    "expected_behavior_rate": 0.5,
+    "tool_call_correctness": 1.0,
+    "mean_trajectory_length": 2.375,
+    "pricing": {
+      "input_usd_per_million": null,
+      "output_usd_per_million": null
+    }
+  },
+  "queries": [
+    {
+      "id": "simple",
+      "query": "Which framework controls Chromium?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 2,
+      "tool_calls": 2,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 4.4664,
+      "status": "completed",
+      "answer": "- Playwright controls Chromium. [E1]",
+      "claims": [
+        {
+          "text": "Playwright controls Chromium.",
+          "source_id": "E1",
+          "quote": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 293,
+          "action": "search_documents",
+          "args": {
+            "query": "Chromium framework"
+          },
+          "note": "Searching for the framework that controls Chromium.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "count": 2
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 626,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "Playwright controls Chromium.",
+                "source_id": "E1",
+                "quote": "The runner shall launch and control Chromium through Playwright."
+              }
+            ]
+          },
+          "note": "Verifying that Playwright controls Chromium using evidence E1.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 816,
+          "action": "finish",
+          "args": {},
+          "note": "Claims successfully verified; finishing the task.",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "sample.pdf",
+          "page": 2,
+          "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+        }
+      },
+      "usage": {
+        "input_tokens": 1524,
+        "output_tokens": 142,
+        "total_tokens": 1666,
+        "known_total_tokens": 1666,
+        "accounting_complete": true,
+        "kind": "provider_reported",
+        "calls": [
+          {
+            "input_tokens": 431,
+            "output_tokens": 46,
+            "thought_tokens": 0,
+            "total_tokens": 477
+          },
+          {
+            "input_tokens": 528,
+            "output_tokens": 65,
+            "thought_tokens": 0,
+            "total_tokens": 593
+          },
+          {
+            "input_tokens": 565,
+            "output_tokens": 31,
+            "thought_tokens": 0,
+            "total_tokens": 596
+          }
+        ]
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "research",
+      "query": "Explain when Tier 3 is used and when automatic healing must be rejected. Verify both requirements.",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 2,
+      "tool_calls": 2,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 4.9383,
+      "status": "completed",
+      "answer": "- Tier 3 is used when enabled and deterministic tiers cannot produce an accepted decision. [E1]\n- Automatic healing must be rejected when confidence is below policy or candidates remain materially ambiguous. [E2]",
+      "claims": [
+        {
+          "text": "Tier 3 is used when enabled and deterministic tiers cannot produce an accepted decision.",
+          "source_id": "E1",
+          "quote": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+        },
+        {
+          "text": "Automatic healing must be rejected when confidence is below policy or candidates remain materially ambiguous.",
+          "source_id": "E2",
+          "quote": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 357,
+          "action": "search_documents",
+          "args": {
+            "query": "Tier 3 automatic healing"
+          },
+          "note": "Searching documents for Tier 3 usage and rejection conditions of automatic healing.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "count": 2
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 792,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "Tier 3 is used when enabled and deterministic tiers cannot produce an accepted decision.",
+                "source_id": "E1",
+                "quote": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+              },
+              {
+                "text": "Automatic healing must be rejected when confidence is below policy or candidates remain materially ambiguous.",
+                "source_id": "E2",
+                "quote": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+              }
+            ]
+          },
+          "note": "Verifying both requirements using exact quotes from sample.pdf.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 983,
+          "action": "finish",
+          "args": {},
+          "note": "Claims successfully verified; finishing task.",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 7,
+          "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "sample.pdf",
+          "page": 8,
+          "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+        }
+      },
+      "usage": {
+        "input_tokens": 1592,
+        "output_tokens": 242,
+        "total_tokens": 1834,
+        "known_total_tokens": 1834,
+        "accounting_complete": true,
+        "kind": "provider_reported",
+        "calls": [
+          {
+            "input_tokens": 445,
+            "output_tokens": 40,
+            "thought_tokens": 0,
+            "total_tokens": 485
+          },
+          {
+            "input_tokens": 555,
+            "output_tokens": 172,
+            "thought_tokens": 0,
+            "total_tokens": 727
+          },
+          {
+            "input_tokens": 592,
+            "output_tokens": 30,
+            "thought_tokens": 0,
+            "total_tokens": 622
+          }
+        ]
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "revision",
+      "query": "Verify the claim that Selenium controls Chromium and correct it if necessary.",
+      "checks": {
+        "expected_status": true,
+        "answer_content": false,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": false,
+      "task_completed": false,
+      "correct_tool_calls": 2,
+      "tool_calls": 2,
+      "failure_category": "soft_failure",
+      "recovered_incidents": 0,
+      "seconds": 4.2975,
+      "status": "completed",
+      "answer": "- Playwright controls Chromium, not Selenium. [E1]",
+      "claims": [
+        {
+          "text": "Playwright controls Chromium, not Selenium.",
+          "source_id": "E1",
+          "quote": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 336,
+          "action": "search_documents",
+          "args": {
+            "query": "Selenium controls Chromium"
+          },
+          "note": "Searching the documents to verify if Selenium controls Chromium.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "count": 2
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 682,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "Playwright controls Chromium, not Selenium.",
+                "source_id": "E1",
+                "quote": "The runner shall launch and control Chromium through Playwright."
+              }
+            ]
+          },
+          "note": "Verifying the corrected claim using evidence from sample.pdf.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 871,
+          "action": "finish",
+          "args": {},
+          "note": "Verification successfully completed.",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "sample.pdf",
+          "page": 2,
+          "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+        }
+      },
+      "usage": {
+        "input_tokens": 1552,
+        "output_tokens": 172,
+        "total_tokens": 1724,
+        "known_total_tokens": 1724,
+        "accounting_complete": true,
+        "kind": "provider_reported",
+        "calls": [
+          {
+            "input_tokens": 439,
+            "output_tokens": 48,
+            "thought_tokens": 0,
+            "total_tokens": 487
+          },
+          {
+            "input_tokens": 538,
+            "output_tokens": 97,
+            "thought_tokens": 0,
+            "total_tokens": 635
+          },
+          {
+            "input_tokens": 575,
+            "output_tokens": 27,
+            "thought_tokens": 0,
+            "total_tokens": 602
+          }
+        ]
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "clarification",
+      "query": "Is it better?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true
+      },
+      "behavior_pass": true,
+      "task_completed": false,
+      "correct_tool_calls": 0,
+      "tool_calls": 0,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 1.4749,
+      "status": "clarification",
+      "answer": "Could you please specify what \"it\" refers to, and what criteria should be used to determine if it is better?",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 272,
+          "action": "clarify",
+          "args": {
+            "question": "Could you please specify what \"it\" refers to, and what criteria should be used to determine if it is better?"
+          },
+          "note": "The user's question is too vague to search or verify.",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 430,
+        "output_tokens": 70,
+        "total_tokens": 500,
+        "known_total_tokens": 500,
+        "accounting_complete": true,
+        "kind": "provider_reported",
+        "calls": [
+          {
+            "input_tokens": 430,
+            "output_tokens": 70,
+            "thought_tokens": 0,
+            "total_tokens": 500
+          }
+        ]
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "unsupported",
+      "query": "What is the documented annual hosting budget in Nepalese rupees?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true
+      },
+      "behavior_pass": true,
+      "task_completed": false,
+      "correct_tool_calls": 5,
+      "tool_calls": 5,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 9.1808,
+      "status": "abstained",
+      "answer": "No evidence regarding an annual hosting budget in Nepalese rupees could be found in the provided documents after multiple searches.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 323,
+          "action": "search_documents",
+          "args": {
+            "query": "hosting budget Nepalese rupees"
+          },
+          "note": "Searching for the annual hosting budget in Nepalese rupees across all documents.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 406,
+          "action": "search_documents",
+          "args": {
+            "query": "hosting budget Nepalese rupees"
+          },
+          "note": "Searching for hosting budget in Nepalese rupees in the available documents.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 537,
+          "action": "search_documents",
+          "args": {
+            "query": "hosting budget Nepalese rupees"
+          },
+          "note": "Searching for annual hosting budget in Nepalese rupees with a specific query.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 4,
+          "context_chars": 670,
+          "action": "search_documents",
+          "args": {
+            "query": "hosting budget"
+          },
+          "note": "Searching for hosting budget using a broader query.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 5,
+          "context_chars": 641,
+          "action": "search_documents",
+          "args": {
+            "query": "hosting budget"
+          },
+          "note": "Searching for hosting budget across all documents to find any mention in Nepalese rupees.",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 6,
+          "context_chars": 655,
+          "action": "abstain",
+          "args": {
+            "reason": "No evidence regarding an annual hosting budget in Nepalese rupees could be found in the provided documents after multiple searches."
+          },
+          "note": "Abstaining due to insufficient evidence in the documents.",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 2914,
+        "output_tokens": 312,
+        "total_tokens": 3226,
+        "known_total_tokens": 3226,
+        "accounting_complete": true,
+        "kind": "provider_reported",
+        "calls": [
+          {
+            "input_tokens": 438,
+            "output_tokens": 54,
+            "thought_tokens": 0,
+            "total_tokens": 492
+          },
+          {
+            "input_tokens": 454,
+            "output_tokens": 53,
+            "thought_tokens": 0,
+            "total_tokens": 507
+          },
+          {
+            "input_tokens": 484,
+            "output_tokens": 40,
+            "thought_tokens": 0,
+            "total_tokens": 524
+          },
+          {
+            "input_tokens": 515,
+            "output_tokens": 46,
+            "thought_tokens": 0,
+            "total_tokens": 561
+          },
+          {
+            "input_tokens": 510,
+            "output_tokens": 53,
+            "thought_tokens": 0,
+            "total_tokens": 563
+          },
+          {
+            "input_tokens": 513,
+            "output_tokens": 66,
+            "thought_tokens": 0,
+            "total_tokens": 579
+          }
+        ]
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "conflict",
+      "query": "Compare the review timeout in synthetic_old_policy.txt and synthetic_new_policy.txt. Is there enough evidence to choose an authoritative value?",
+      "checks": {
+        "expected_status": false,
+        "answer_content": false,
+        "required_pages": true,
+        "required_sources": false,
+        "reasonable_trajectory": false,
+        "citation_integrity": true
+      },
+      "behavior_pass": false,
+      "task_completed": false,
+      "correct_tool_calls": 0,
+      "tool_calls": 0,
+      "failure_category": "hard_failure",
+      "recovered_incidents": 0,
+      "seconds": 0.7865,
+      "status": "error",
+      "answer": "The model service failed; no verified answer is available.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 402,
+          "action": "model_error",
+          "ok": false,
+          "error": "HTTPError",
+          "http_status": 429
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": null,
+        "known_total_tokens": 0,
+        "accounting_complete": false,
+        "kind": "provider_reported",
+        "calls": []
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "timeout",
+      "query": "Which framework controls Chromium?",
+      "checks": {
+        "expected_status": false,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": false,
+        "citation_integrity": true,
+        "injection_observed": false,
+        "safe_failure_response": false
+      },
+      "behavior_pass": false,
+      "task_completed": false,
+      "correct_tool_calls": 0,
+      "tool_calls": 0,
+      "failure_category": "hard_failure",
+      "recovered_incidents": 0,
+      "seconds": 0.8683,
+      "status": "error",
+      "answer": "The model service failed; no verified answer is available.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 293,
+          "action": "model_error",
+          "ok": false,
+          "error": "HTTPError",
+          "http_status": 429
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": null,
+        "known_total_tokens": 0,
+        "accounting_complete": false,
+        "kind": "provider_reported",
+        "calls": []
+      },
+      "estimated_cost_usd": null
+    },
+    {
+      "id": "malformed",
+      "query": "Which framework controls Chromium?",
+      "checks": {
+        "expected_status": false,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": false,
+        "citation_integrity": true,
+        "injection_observed": false,
+        "safe_failure_response": false
+      },
+      "behavior_pass": false,
+      "task_completed": false,
+      "correct_tool_calls": 0,
+      "tool_calls": 0,
+      "failure_category": "hard_failure",
+      "recovered_incidents": 0,
+      "seconds": 0.7808,
+      "status": "error",
+      "answer": "The model service failed; no verified answer is available.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 293,
+          "action": "model_error",
+          "ok": false,
+          "error": "HTTPError",
+          "http_status": 429
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": null,
+        "known_total_tokens": 0,
+        "accounting_complete": false,
+        "kind": "provider_reported",
+        "calls": []
+      },
+      "estimated_cost_usd": null
+    }
+  ]
+}

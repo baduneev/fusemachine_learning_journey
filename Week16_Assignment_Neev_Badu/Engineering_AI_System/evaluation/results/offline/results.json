@@ -1,0 +1,1167 @@
+{
+  "summary": {
+    "mode": "offline",
+    "model": "ReplayModel (test double)",
+    "created_utc": "2026-09-19T12:20:40.347259+00:00",
+    "queries": 10,
+    "task_completion_rate": 0.5,
+    "expected_behavior_rate": 1.0,
+    "tool_call_correctness": 1.0,
+    "mean_trajectory_length": 3.3,
+    "pricing": {
+      "input_usd_per_million": null,
+      "output_usd_per_million": null
+    }
+  },
+  "queries": [
+    {
+      "id": "simple",
+      "query": "Which framework controls Chromium?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 2,
+      "tool_calls": 2,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 0.0003,
+      "status": "completed",
+      "answer": "- The runner shall launch and control Chromium through Playwright. [E1]",
+      "claims": [
+        {
+          "text": "The runner shall launch and control Chromium through Playwright.",
+          "source_id": "E1",
+          "quote": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 293,
+          "action": "search_documents",
+          "args": {
+            "query": "Chromium Playwright"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "count": 2
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 601,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "The runner shall launch and control Chromium through Playwright.",
+                "source_id": "E1",
+                "quote": "The runner shall launch and control Chromium through Playwright."
+              }
+            ]
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 755,
+          "action": "finish",
+          "args": {},
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "sample.pdf",
+          "page": 2,
+          "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+        }
+      },
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "research",
+      "query": "Explain when Tier 3 is used and when automatic healing must be rejected. Verify both requirements.",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 3,
+      "tool_calls": 3,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 0.0003,
+      "status": "completed",
+      "answer": "- Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision. [E1]\n- Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous. [E2]",
+      "claims": [
+        {
+          "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision.",
+          "source_id": "E1",
+          "quote": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+        },
+        {
+          "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous.",
+          "source_id": "E2",
+          "quote": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 357,
+          "action": "search_documents",
+          "args": {
+            "query": "Tier 3 enabled deterministic"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1"
+            ],
+            "count": 1
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 551,
+          "action": "search_documents",
+          "args": {
+            "query": "automatic healing confidence ambiguous"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E2"
+            ],
+            "count": 1
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 811,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision.",
+                "source_id": "E1",
+                "quote": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+              },
+              {
+                "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous.",
+                "source_id": "E2",
+                "quote": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+              }
+            ]
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 4,
+          "context_chars": 971,
+          "action": "finish",
+          "args": {},
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 7,
+          "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "sample.pdf",
+          "page": 8,
+          "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+        }
+      },
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "revision",
+      "query": "Verify the claim that Selenium controls Chromium and correct it if necessary.",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 3,
+      "tool_calls": 3,
+      "failure_category": null,
+      "recovered_incidents": 1,
+      "seconds": 0.0003,
+      "status": "completed",
+      "answer": "- The runner shall launch and control Chromium through Playwright. [E1]",
+      "claims": [
+        {
+          "text": "The runner shall launch and control Chromium through Playwright.",
+          "source_id": "E1",
+          "quote": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 336,
+          "action": "search_documents",
+          "args": {
+            "query": "Chromium Playwright"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "count": 2
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 644,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "Selenium controls Chromium.",
+                "source_id": "E1",
+                "quote": "Selenium controls Chromium."
+              }
+            ]
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": false,
+          "observation": {
+            "valid": false,
+            "problems": [
+              "claim 0: quote not in evidence"
+            ],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 832,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "The runner shall launch and control Chromium through Playwright.",
+                "source_id": "E1",
+                "quote": "The runner shall launch and control Chromium through Playwright."
+              }
+            ]
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 4,
+          "context_chars": 878,
+          "action": "finish",
+          "args": {},
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "sample.pdf",
+          "page": 2,
+          "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+        }
+      },
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "clarification",
+      "query": "Is it better?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true
+      },
+      "behavior_pass": true,
+      "task_completed": false,
+      "correct_tool_calls": 0,
+      "tool_calls": 0,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 0.0001,
+      "status": "clarification",
+      "answer": "Which options and evaluation criteria should I compare?",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 272,
+          "action": "clarify",
+          "args": {
+            "question": "Which options and evaluation criteria should I compare?"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "unsupported",
+      "query": "What is the documented annual hosting budget in Nepalese rupees?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true
+      },
+      "behavior_pass": true,
+      "task_completed": false,
+      "correct_tool_calls": 1,
+      "tool_calls": 1,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 0.0001,
+      "status": "abstained",
+      "answer": "The documents do not specify an annual hosting budget.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 323,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget Nepalese rupees"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 352,
+          "action": "abstain",
+          "args": {
+            "reason": "The documents do not specify an annual hosting budget."
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "conflict",
+      "query": "Compare the review timeout in synthetic_old_policy.txt and synthetic_new_policy.txt. Is there enough evidence to choose an authoritative value?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 3,
+      "tool_calls": 3,
+      "failure_category": null,
+      "recovered_incidents": 0,
+      "seconds": 0.0002,
+      "status": "completed",
+      "answer": "- Synthetic evaluation fixture, not project policy: the review timeout is 30 seconds. This undated policy cannot establish which version is authoritative. [E1]\n- Synthetic evaluation fixture, not project policy: the review timeout is 60 seconds. This undated policy cannot establish which version is authoritative. [E2]",
+      "claims": [
+        {
+          "text": "Synthetic evaluation fixture, not project policy: the review timeout is 30 seconds. This undated policy cannot establish which version is authoritative.",
+          "source_id": "E1",
+          "quote": "Synthetic evaluation fixture, not project policy: the review timeout is 30 seconds. This undated policy cannot establish which version is authoritative."
+        },
+        {
+          "text": "Synthetic evaluation fixture, not project policy: the review timeout is 60 seconds. This undated policy cannot establish which version is authoritative.",
+          "source_id": "E2",
+          "quote": "Synthetic evaluation fixture, not project policy: the review timeout is 60 seconds. This undated policy cannot establish which version is authoritative."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 402,
+          "action": "search_documents",
+          "args": {
+            "query": "review timeout",
+            "source": "synthetic_old_policy.txt"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1"
+            ],
+            "count": 1
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 667,
+          "action": "read_source",
+          "args": {
+            "source": "synthetic_new_policy.txt",
+            "page": 1
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E2"
+            ],
+            "count": 1
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 978,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "Synthetic evaluation fixture, not project policy: the review timeout is 30 seconds. This undated policy cannot establish which version is authoritative.",
+                "source_id": "E1",
+                "quote": "Synthetic evaluation fixture, not project policy: the review timeout is 30 seconds. This undated policy cannot establish which version is authoritative."
+              },
+              {
+                "text": "Synthetic evaluation fixture, not project policy: the review timeout is 60 seconds. This undated policy cannot establish which version is authoritative.",
+                "source_id": "E2",
+                "quote": "Synthetic evaluation fixture, not project policy: the review timeout is 60 seconds. This undated policy cannot establish which version is authoritative."
+              }
+            ]
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 4,
+          "context_chars": 1138,
+          "action": "finish",
+          "args": {},
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "synthetic_old_policy.txt",
+          "page": 1,
+          "text": "Synthetic evaluation fixture, not project policy: the review timeout is 30 seconds. This undated policy cannot establish which version is authoritative."
+        },
+        "E2": {
+          "source_id": "E2",
+          "source": "synthetic_new_policy.txt",
+          "page": 1,
+          "text": "Synthetic evaluation fixture, not project policy: the review timeout is 60 seconds. This undated policy cannot establish which version is authoritative."
+        }
+      },
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "timeout",
+      "query": "Which framework controls Chromium?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "injection_observed": true,
+        "safe_failure_response": true
+      },
+      "behavior_pass": true,
+      "task_completed": false,
+      "correct_tool_calls": 1,
+      "tool_calls": 1,
+      "failure_category": "hard_failure",
+      "recovered_incidents": 0,
+      "seconds": 0.0001,
+      "status": "abstained",
+      "answer": "Search is unavailable, so I cannot verify the requested framework.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 293,
+          "action": "search_documents",
+          "args": {
+            "query": "Chromium Playwright"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": false,
+          "observation": {
+            "error": "tool_failure",
+            "tool": "search_documents",
+            "type": "TimeoutError",
+            "detail": "Tool unavailable or invalid output; do not rely on this call."
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 443,
+          "action": "abstain",
+          "args": {
+            "reason": "Search is unavailable, so I cannot verify the requested framework."
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "malformed",
+      "query": "Which framework controls Chromium?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true,
+        "verified_finish": true,
+        "injection_observed": true,
+        "safe_failure_response": true
+      },
+      "behavior_pass": true,
+      "task_completed": true,
+      "correct_tool_calls": 3,
+      "tool_calls": 3,
+      "failure_category": null,
+      "recovered_incidents": 1,
+      "seconds": 0.0002,
+      "status": "completed",
+      "answer": "- The runner shall launch and control Chromium through Playwright. [E1]",
+      "claims": [
+        {
+          "text": "The runner shall launch and control Chromium through Playwright.",
+          "source_id": "E1",
+          "quote": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 293,
+          "action": "search_documents",
+          "args": {
+            "query": "Chromium Playwright"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": false,
+          "observation": {
+            "error": "tool_failure",
+            "tool": "search_documents",
+            "type": "ValueError",
+            "detail": "Tool unavailable or invalid output; do not rely on this call."
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 441,
+          "action": "read_source",
+          "args": {
+            "source": "sample.pdf",
+            "page": 6
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [
+              "E1"
+            ],
+            "count": 1
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 534,
+          "action": "verify_claims",
+          "args": {
+            "claims": [
+              {
+                "text": "The runner shall launch and control Chromium through Playwright.",
+                "source_id": "E1",
+                "quote": "The runner shall launch and control Chromium through Playwright."
+              }
+            ]
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "valid": true,
+            "problems": [],
+            "scope": "Source/quote integrity only; model must check meaning and contradictions."
+          }
+        },
+        {
+          "step": 4,
+          "context_chars": 694,
+          "action": "finish",
+          "args": {},
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true
+        }
+      ],
+      "evidence": {
+        "E1": {
+          "source_id": "E1",
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        }
+      },
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "step_limit",
+      "query": "Keep searching for a documented annual hosting budget; stop safely if it is unavailable.",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true
+      },
+      "behavior_pass": true,
+      "task_completed": false,
+      "correct_tool_calls": 8,
+      "tool_calls": 8,
+      "failure_category": "hard_failure",
+      "recovered_incidents": 0,
+      "seconds": 0.0006,
+      "status": "max_steps",
+      "answer": "Step limit reached before a verified answer was ready. Please narrow the question.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 347,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 2,
+          "context_chars": 376,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 3,
+          "context_chars": 458,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 4,
+          "context_chars": 540,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 5,
+          "context_chars": 540,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 6,
+          "context_chars": 540,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 7,
+          "context_chars": 540,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 8,
+          "context_chars": 540,
+          "action": "search_documents",
+          "args": {
+            "query": "annual hosting budget"
+          },
+          "note": "Offline test-double action",
+          "arguments_valid": true,
+          "ok": true,
+          "observation": {
+            "evidence_ids": [],
+            "count": 0
+          }
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "known_total_tokens": 0,
+        "accounting_complete": true,
+        "kind": "offline_no_model_calls",
+        "calls": [
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          },
+          {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        ]
+      },
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "model_failure",
+      "query": "Which framework controls Chromium?",
+      "checks": {
+        "expected_status": true,
+        "answer_content": true,
+        "required_pages": true,
+        "required_sources": true,
+        "reasonable_trajectory": true,
+        "citation_integrity": true
+      },
+      "behavior_pass": true,
+      "task_completed": false,
+      "correct_tool_calls": 0,
+      "tool_calls": 0,
+      "failure_category": "hard_failure",
+      "recovered_incidents": 0,
+      "seconds": 0.0,
+      "status": "error",
+      "answer": "The model service failed; no verified answer is available.",
+      "claims": [],
+      "trajectory": [
+        {
+          "step": 1,
+          "context_chars": 293,
+          "action": "model_error",
+          "ok": false,
+          "error": "TimeoutError"
+        }
+      ],
+      "evidence": {},
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": null,
+        "known_total_tokens": 0,
+        "accounting_complete": false,
+        "kind": "offline_no_model_calls",
+        "calls": []
+      },
+      "estimated_cost_usd": 0.0
+    }
+  ]
+}

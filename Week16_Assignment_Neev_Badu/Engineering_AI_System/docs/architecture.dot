@@ -1,0 +1,28 @@
+digraph W16 {
+  graph [rankdir=TB, bgcolor="#ffffff", pad="0.35", nodesep="0.35", ranksep="0.48", label="WEEK 16 | EVIDENCE-CHECKING ASSISTANT", labelloc=t, fontsize=21, fontname="DejaVu Sans", fontcolor="#16283f"];
+  node [shape=box, style="rounded,filled", fillcolor="#edf3fa", color="#b7c7d8", fontname="DejaVu Sans", fontsize=12, margin="0.18,0.13"];
+  edge [fontname="DejaVu Sans", fontsize=10, color="#4f647a", arrowsize=0.75];
+  user [label="User question"];
+  agent [label="SINGLE GEMINI AGENT\nChoose the next action from observations", fillcolor="#173b60", fontcolor=white];
+  tools [label="DOCUMENT TOOLS\nsearch_documents / read_source"];
+  backend [label="DOCUMENT BACKEND\nW15 Chroma + reranker OR PDF lexical search"];
+  verify [label="verify_claims\nCheck source IDs + verbatim quotes"];
+  context [label="CONTEXT ENGINEERING\nTop 3 results per call; 900 characters each\nLast 8 evidence items + 3 action summaries", fillcolor="#e5f3ed"];
+  finish [label="Finish gate\nExact verified claims only",shape=diamond,style=filled];
+  answer [label="Cited answer",fillcolor="#e5f3ed"];
+  stop [label="Clarification / abstention\n8-step cap / model error",fillcolor="#fff0d9"];
+  trace [label="Full trace + evidence ledger\nEvaluation metrics / token accounting",shape=note,fillcolor="#f5f5f5"];
+  user -> agent;
+  agent -> tools [label="Search again or inspect page"];
+  tools -> backend;
+  backend -> context [label="Validated evidence or error"];
+  agent -> verify [label="Propose or revise claims"];
+  verify -> context [label="Pass / failed quote check"];
+  context -> agent [label="NEXT ITERATION",color="#168060",penwidth=2];
+  agent -> finish;
+  finish -> answer [label="Pass"];
+  finish -> context [label="Reject"];
+  agent -> stop [label="Stop"];
+  context -> trace [style=dashed,label="Retain outside prompt"];
+  {rank=same; tools; verify; finish; stop;}
+}

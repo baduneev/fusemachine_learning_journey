@@ -1,0 +1,3 @@
+# Small PDF + Gemini REST path. Full W15 Chroma path uses requirements-docker.txt.
+pypdf>=5,<7
+python-dotenv>=1,<2
