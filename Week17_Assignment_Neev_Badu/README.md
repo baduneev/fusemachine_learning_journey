@@ -98,10 +98,4 @@ uv run pytest -q
 
 More detailed commands and interpretation are in each track's README.
 
-## Safe submission checklist
 
-- Do not add either track's `.env` file.
-- Commit the lockfiles and generated reports.
-- Stage only `Week17_Assignment_Neev_Badu/` so unrelated working tree files are not included.
-- Run `python track_b_agent/scripts/check_staged_secrets.py --staged` after staging and before committing.
-- Push the commit, then confirm both GitHub links above open.
