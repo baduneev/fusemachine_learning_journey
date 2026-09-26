@@ -57,6 +57,7 @@ flowchart LR
 
 | Requirement | Evidence |
 |---|---|
+| Formatted submission report | `Week17_Assignment_Deliverables_Report.docx` |
 | Separate reproducible environments | `pyproject.toml`, `.python-version`, and `uv.lock` in each track |
 | Track A MLflow comparison | `track_a_churn/outputs/run_comparison.md` and local `mlruns.db` |
 | Registered model and stages | `track_a_churn/outputs/registry_info.json` |
