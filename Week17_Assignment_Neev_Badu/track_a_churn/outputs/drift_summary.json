@@ -1,0 +1,31 @@
+{
+  "engineered_changes": [
+    "MonthlyCharges + Normal(35, 5)",
+    "55% Contract set to Month-to-month",
+    "15% of full current population changed from non-churn to churn"
+  ],
+  "specific_column_results": {
+    "Churn": {
+      "drift_detected": true,
+      "drift_score": 0.11208468392801328
+    },
+    "MonthlyCharges": {
+      "drift_detected": true,
+      "drift_score": 1.1276988281984983
+    },
+    "Contract": {
+      "drift_detected": true,
+      "drift_score": 0.19030518423515602
+    }
+  },
+  "custom_mean_shift": {
+    "column_name": "MonthlyCharges",
+    "reference_mean": 64.95008113590264,
+    "current_mean": 99.0523773936653,
+    "absolute_shift": 34.10229625776266,
+    "relative_shift_pct": 52.505394391127005
+  },
+  "reference_churn_rate": 0.2653144016227181,
+  "current_churn_rate": 0.41504969238050166,
+  "recommended_action": "Investigate upstream billing/contract changes and retrain only after validation if drift persists."
+}

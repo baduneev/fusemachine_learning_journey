@@ -1,0 +1,136 @@
+{
+  "case": {
+    "id": "revision",
+    "query": "Verify that Selenium controls Chromium and correct the claim.",
+    "expected": [
+      "completed"
+    ],
+    "terms": [
+      "playwright"
+    ],
+    "forbidden": [
+      "selenium controls",
+      "not selenium"
+    ]
+  },
+  "passed": false,
+  "status": "max_steps",
+  "answer": "Step limit reached before a verified answer was ready. Please narrow the question.",
+  "claims": [],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 320,
+      "action": "search_documents",
+      "args": {
+        "query": "Verify that Selenium controls Chromium and correct the claim."
+      },
+      "note": "prompt_v1 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [
+        {
+          "source": "sample.pdf",
+          "page": 2,
+          "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+        },
+        {
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [
+          "E1",
+          "E2"
+        ],
+        "count": 2
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 669,
+      "action": "finish",
+      "args": {},
+      "note": "prompt_v1 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "unverified_finish",
+        "detail": "Verify claims before finishing."
+      }
+    },
+    {
+      "step": 3,
+      "context_chars": 830,
+      "action": "finish",
+      "args": {},
+      "note": "prompt_v1 observed ['error', 'detail'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "unverified_finish",
+        "detail": "Verify claims before finishing."
+      }
+    },
+    {
+      "step": 4,
+      "context_chars": 952,
+      "action": "finish",
+      "args": {},
+      "note": "prompt_v1 observed ['error', 'detail'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "unverified_finish",
+        "detail": "Verify claims before finishing."
+      }
+    }
+  ],
+  "evidence": {
+    "E1": {
+      "source_id": "E1",
+      "source": "sample.pdf",
+      "page": 2,
+      "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+    },
+    "E2": {
+      "source_id": "E2",
+      "source": "sample.pdf",
+      "page": 6,
+      "text": "The runner shall launch and control Chromium through Playwright."
+    }
+  },
+  "usage": {
+    "input_tokens": 302,
+    "output_tokens": 137,
+    "total_tokens": 439,
+    "known_total_tokens": 439,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 79,
+        "output_tokens": 48,
+        "total_tokens": 127
+      },
+      {
+        "input_tokens": 77,
+        "output_tokens": 31,
+        "total_tokens": 108
+      },
+      {
+        "input_tokens": 74,
+        "output_tokens": 29,
+        "total_tokens": 103
+      },
+      {
+        "input_tokens": 72,
+        "output_tokens": 29,
+        "total_tokens": 101
+      }
+    ]
+  },
+  "termination_reason": "max_steps"
+}

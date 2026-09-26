@@ -1,0 +1,7 @@
+{
+  "promoted_prompt": "prompt_v3",
+  "rule": "highest behavior pass rate, then lowest total tokens",
+  "behavior_pass_rate": 1.0,
+  "total_tokens": 3903,
+  "provider_limitation": "Delivered comparison uses an explicit deterministic test provider; run live mode before production."
+}

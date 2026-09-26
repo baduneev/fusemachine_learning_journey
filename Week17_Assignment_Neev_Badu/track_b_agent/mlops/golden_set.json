@@ -1,0 +1,20 @@
+[
+  {
+    "case": "simple",
+    "question": "Which framework controls Chromium?",
+    "golden_response": "The runner shall launch and control Chromium through Playwright.",
+    "source_context": "The runner shall launch and control Chromium through Playwright."
+  },
+  {
+    "case": "research",
+    "question": "When is Tier 3 used, and when must automatic healing be rejected?",
+    "golden_response": "Tier 3 runs only when it is enabled and deterministic tiers cannot produce an accepted decision. Automatic healing is rejected when confidence is below policy or candidates remain materially ambiguous.",
+    "source_context": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision. Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+  },
+  {
+    "case": "revision",
+    "question": "Verify that Selenium controls Chromium and correct the claim.",
+    "golden_response": "The runner shall launch and control Chromium through Playwright.",
+    "source_context": "The runner shall launch and control Chromium through Playwright."
+  }
+]

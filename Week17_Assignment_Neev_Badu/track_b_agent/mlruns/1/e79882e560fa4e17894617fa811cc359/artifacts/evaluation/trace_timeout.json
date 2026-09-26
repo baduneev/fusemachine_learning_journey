@@ -1,0 +1,120 @@
+{
+  "case": {
+    "id": "timeout",
+    "query": "Which framework controls Chromium after a search outage?",
+    "expected": [
+      "completed",
+      "abstained"
+    ],
+    "terms": [
+      "playwright"
+    ],
+    "failure": "search_unavailable"
+  },
+  "passed": false,
+  "status": "max_steps",
+  "answer": "Step limit reached before a verified answer was ready. Please narrow the question.",
+  "claims": [],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 315,
+      "action": "search_documents",
+      "args": {
+        "query": "Which framework controls Chromium after a search outage?"
+      },
+      "note": "prompt_v1 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "tool_failure",
+        "tool": "search_documents",
+        "type": "TimeoutError",
+        "detail": "Tool unavailable or invalid output; do not rely on this call."
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 506,
+      "action": "search_documents",
+      "args": {
+        "query": "Which framework controls Chromium after a search outage?"
+      },
+      "note": "prompt_v1 observed ['error', 'tool'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "tool_failure",
+        "tool": "search_documents",
+        "type": "TimeoutError",
+        "detail": "Tool unavailable or invalid output; do not rely on this call."
+      }
+    },
+    {
+      "step": 3,
+      "context_chars": 636,
+      "action": "search_documents",
+      "args": {
+        "query": "Which framework controls Chromium after a search outage?"
+      },
+      "note": "prompt_v1 observed ['error', 'tool'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "tool_failure",
+        "tool": "search_documents",
+        "type": "TimeoutError",
+        "detail": "Tool unavailable or invalid output; do not rely on this call."
+      }
+    },
+    {
+      "step": 4,
+      "context_chars": 766,
+      "action": "search_documents",
+      "args": {
+        "query": "Which framework controls Chromium after a search outage?"
+      },
+      "note": "prompt_v1 observed ['error', 'tool'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "tool_failure",
+        "tool": "search_documents",
+        "type": "TimeoutError",
+        "detail": "Tool unavailable or invalid output; do not rely on this call."
+      }
+    }
+  ],
+  "evidence": {},
+  "usage": {
+    "input_tokens": 302,
+    "output_tokens": 191,
+    "total_tokens": 493,
+    "known_total_tokens": 493,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 79,
+        "output_tokens": 47,
+        "total_tokens": 126
+      },
+      {
+        "input_tokens": 77,
+        "output_tokens": 48,
+        "total_tokens": 125
+      },
+      {
+        "input_tokens": 74,
+        "output_tokens": 48,
+        "total_tokens": 122
+      },
+      {
+        "input_tokens": 72,
+        "output_tokens": 48,
+        "total_tokens": 120
+      }
+    ]
+  },
+  "termination_reason": "max_steps"
+}

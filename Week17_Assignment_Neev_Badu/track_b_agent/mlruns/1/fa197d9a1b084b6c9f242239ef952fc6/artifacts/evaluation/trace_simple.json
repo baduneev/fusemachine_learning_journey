@@ -1,0 +1,130 @@
+{
+  "case": {
+    "id": "simple",
+    "query": "Which framework controls Chromium?",
+    "expected": [
+      "completed"
+    ],
+    "terms": [
+      "playwright"
+    ]
+  },
+  "passed": true,
+  "status": "completed",
+  "answer": "- The runner shall launch and control Chromium through Playwright. [E1]",
+  "claims": [
+    {
+      "text": "The runner shall launch and control Chromium through Playwright.",
+      "source_id": "E1",
+      "quote": "The runner shall launch and control Chromium through Playwright."
+    }
+  ],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 293,
+      "action": "search_documents",
+      "args": {
+        "query": "Which framework controls Chromium?"
+      },
+      "note": "prompt_v2 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [
+        {
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        },
+        {
+          "source": "sample.pdf",
+          "page": 2,
+          "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+        }
+      ],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [
+          "E1",
+          "E2"
+        ],
+        "count": 2
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 642,
+      "action": "verify_claims",
+      "args": {
+        "claims": [
+          {
+            "text": "The runner shall launch and control Chromium through Playwright.",
+            "source_id": "E1",
+            "quote": "The runner shall launch and control Chromium through Playwright."
+          }
+        ]
+      },
+      "note": "prompt_v2 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": {
+        "valid": true,
+        "problems": [],
+        "scope": "Source/quote integrity only; model must check meaning and contradictions."
+      },
+      "ok": true,
+      "observation": {
+        "valid": true,
+        "problems": [],
+        "scope": "Source/quote integrity only; model must check meaning and contradictions."
+      }
+    },
+    {
+      "step": 3,
+      "context_chars": 851,
+      "action": "finish",
+      "args": {},
+      "note": "prompt_v2 observed ['valid', 'problems'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": true
+    }
+  ],
+  "evidence": {
+    "E1": {
+      "source_id": "E1",
+      "source": "sample.pdf",
+      "page": 6,
+      "text": "The runner shall launch and control Chromium through Playwright."
+    },
+    "E2": {
+      "source_id": "E2",
+      "source": "sample.pdf",
+      "page": 2,
+      "text": "The MVP is Chromium-first and does not claim cross-browser equivalence."
+    }
+  },
+  "usage": {
+    "input_tokens": 266,
+    "output_tokens": 150,
+    "total_tokens": 416,
+    "known_total_tokens": 416,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 91,
+        "output_tokens": 41,
+        "total_tokens": 132
+      },
+      {
+        "input_tokens": 89,
+        "output_tokens": 79,
+        "total_tokens": 168
+      },
+      {
+        "input_tokens": 86,
+        "output_tokens": 30,
+        "total_tokens": 116
+      }
+    ]
+  },
+  "termination_reason": "completed"
+}

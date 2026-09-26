@@ -1,0 +1,6 @@
+case,status,passed,iterations,total_tokens
+simple,max_steps,False,4,432
+research,max_steps,False,4,440
+revision,max_steps,False,4,439
+unsupported,max_steps,False,4,487
+timeout,max_steps,False,4,493

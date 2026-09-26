@@ -1,0 +1,8 @@
+[
+  {"source":"sample.pdf","page":6,"text":"The runner shall launch and control Chromium through Playwright."},
+  {"source":"sample.pdf","page":7,"text":"Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."},
+  {"source":"sample.pdf","page":8,"text":"Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."},
+  {"source":"sample.pdf","page":2,"text":"The MVP is Chromium-first and does not claim cross-browser equivalence."},
+  {"source":"synthetic_old_policy.txt","page":1,"text":"Synthetic evaluation fixture, not project policy: the review timeout is 30 seconds. This undated policy cannot establish which version is authoritative."},
+  {"source":"synthetic_new_policy.txt","page":1,"text":"Synthetic evaluation fixture, not project policy: the review timeout is 60 seconds. This undated policy cannot establish which version is authoritative."}
+]

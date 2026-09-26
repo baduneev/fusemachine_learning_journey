@@ -1,0 +1,166 @@
+{
+  "case": {
+    "id": "research",
+    "query": "When is Tier 3 used, and when must automatic healing be rejected?",
+    "expected": [
+      "completed"
+    ],
+    "terms": [
+      "enabled",
+      "deterministic",
+      "confidence",
+      "ambiguous"
+    ]
+  },
+  "passed": true,
+  "status": "completed",
+  "answer": "- Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision. [E1]\n- Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous. [E2]",
+  "claims": [
+    {
+      "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision.",
+      "source_id": "E1",
+      "quote": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+    },
+    {
+      "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous.",
+      "source_id": "E2",
+      "quote": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+    }
+  ],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 324,
+      "action": "search_documents",
+      "args": {
+        "query": "Tier 3 enabled deterministic"
+      },
+      "note": "prompt_v3 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [
+        {
+          "source": "sample.pdf",
+          "page": 7,
+          "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+        }
+      ],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [
+          "E1"
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 559,
+      "action": "search_documents",
+      "args": {
+        "query": "automatic healing confidence ambiguous"
+      },
+      "note": "prompt_v3 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [
+        {
+          "source": "sample.pdf",
+          "page": 8,
+          "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+        }
+      ],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [
+          "E2"
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 3,
+      "context_chars": 874,
+      "action": "verify_claims",
+      "args": {
+        "claims": [
+          {
+            "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision.",
+            "source_id": "E1",
+            "quote": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+          },
+          {
+            "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous.",
+            "source_id": "E2",
+            "quote": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+          }
+        ]
+      },
+      "note": "prompt_v3 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": {
+        "valid": true,
+        "problems": [],
+        "scope": "Source/quote integrity only; model must check meaning and contradictions."
+      },
+      "ok": true,
+      "observation": {
+        "valid": true,
+        "problems": [],
+        "scope": "Source/quote integrity only; model must check meaning and contradictions."
+      }
+    },
+    {
+      "step": 4,
+      "context_chars": 1089,
+      "action": "finish",
+      "args": {},
+      "note": "prompt_v3 observed ['valid', 'problems'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": true
+    }
+  ],
+  "evidence": {
+    "E1": {
+      "source_id": "E1",
+      "source": "sample.pdf",
+      "page": 7,
+      "text": "Tier 3 shall run only when enabled and deterministic tiers cannot produce an accepted decision."
+    },
+    "E2": {
+      "source_id": "E2",
+      "source": "sample.pdf",
+      "page": 8,
+      "text": "Automatic healing shall be rejected when confidence is below policy or candidates remain materially ambiguous."
+    }
+  },
+  "usage": {
+    "input_tokens": 758,
+    "output_tokens": 277,
+    "total_tokens": 1035,
+    "known_total_tokens": 1035,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 193,
+        "output_tokens": 40,
+        "total_tokens": 233
+      },
+      {
+        "input_tokens": 191,
+        "output_tokens": 46,
+        "total_tokens": 237
+      },
+      {
+        "input_tokens": 188,
+        "output_tokens": 161,
+        "total_tokens": 349
+      },
+      {
+        "input_tokens": 186,
+        "output_tokens": 30,
+        "total_tokens": 216
+      }
+    ]
+  },
+  "termination_reason": "completed"
+}

@@ -1,0 +1,70 @@
+{
+  "case": {
+    "id": "timeout",
+    "query": "Which framework controls Chromium after a search outage?",
+    "expected": [
+      "completed",
+      "abstained"
+    ],
+    "terms": [
+      "playwright"
+    ],
+    "failure": "search_unavailable"
+  },
+  "passed": false,
+  "status": "abstained",
+  "answer": "The search tool failed, so evidence is unavailable.",
+  "claims": [],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 315,
+      "action": "search_documents",
+      "args": {
+        "query": "Which framework controls Chromium after a search outage?"
+      },
+      "note": "prompt_v2 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "tool_failure",
+        "tool": "search_documents",
+        "type": "TimeoutError",
+        "detail": "Tool unavailable or invalid output; do not rely on this call."
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 506,
+      "action": "abstain",
+      "args": {
+        "reason": "The search tool failed, so evidence is unavailable."
+      },
+      "note": "prompt_v2 observed ['error', 'tool'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": true
+    }
+  ],
+  "evidence": {},
+  "usage": {
+    "input_tokens": 180,
+    "output_tokens": 92,
+    "total_tokens": 272,
+    "known_total_tokens": 272,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 91,
+        "output_tokens": 47,
+        "total_tokens": 138
+      },
+      {
+        "input_tokens": 89,
+        "output_tokens": 45,
+        "total_tokens": 134
+      }
+    ]
+  },
+  "termination_reason": "abstained"
+}

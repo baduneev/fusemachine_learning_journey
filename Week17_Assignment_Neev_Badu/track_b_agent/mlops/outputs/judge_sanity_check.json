@@ -1,0 +1,6 @@
+{
+  "method": "Compare the joint judge verdict with a human-authored expected pass label for every row.",
+  "agreement_rate": 1.0,
+  "rows_checked": 9,
+  "interpretation": "The judge agrees with all human labels in this small set."
+}

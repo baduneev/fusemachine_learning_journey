@@ -1,0 +1,48 @@
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Python cache / compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Chroma / generated vector database
+data/chroma_db/
+
+# Logs
+*.log
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python packaging/build artifacts
+build/
+dist/
+*.egg-info/
+
+# Test/cache artifacts
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Temporary files
+*.tmp
+*.temp
+
+# User-specific ad hoc traces
+runs/

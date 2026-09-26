@@ -1,0 +1,67 @@
+{
+  "case": {
+    "id": "unsupported",
+    "query": "What is the documented annual hosting budget?",
+    "expected": [
+      "abstained"
+    ],
+    "terms": [
+      "do not specify"
+    ]
+  },
+  "passed": true,
+  "status": "abstained",
+  "answer": "The documents do not specify an annual hosting budget.",
+  "claims": [],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 304,
+      "action": "search_documents",
+      "args": {
+        "query": "What is the documented annual hosting budget?"
+      },
+      "note": "prompt_v2 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [],
+        "count": 0
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 374,
+      "action": "abstain",
+      "args": {
+        "reason": "The documents do not specify an annual hosting budget."
+      },
+      "note": "prompt_v2 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": true
+    }
+  ],
+  "evidence": {},
+  "usage": {
+    "input_tokens": 180,
+    "output_tokens": 92,
+    "total_tokens": 272,
+    "known_total_tokens": 272,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 91,
+        "output_tokens": 44,
+        "total_tokens": 135
+      },
+      {
+        "input_tokens": 89,
+        "output_tokens": 48,
+        "total_tokens": 137
+      }
+    ]
+  },
+  "termination_reason": "abstained"
+}

@@ -1,0 +1,4 @@
+run_id,prompt_version,diagnosis_from_previous_trace,behavior_pass_rate,task_completion_rate,mean_iterations,total_tokens
+e79882e560fa4e17894617fa811cc359,prompt_v1,Unverified finish attempts caused step exhaustion.,0.0,0.0,4.0,2291
+fa197d9a1b084b6c9f242239ef952fc6,prompt_v2,"Verification improved, but incomplete multi-part research and failed correction recovery remained.",0.6,0.4,2.6,1884
+bdff75fb47fb4bf4b976c1ff15753b5b,prompt_v3,"Added targeted second search, verification repair, and alternate-tool recovery.",1.0,0.8,3.2,3903

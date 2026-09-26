@@ -1,0 +1,114 @@
+{
+  "case": {
+    "id": "unsupported",
+    "query": "What is the documented annual hosting budget?",
+    "expected": [
+      "abstained"
+    ],
+    "terms": [
+      "do not specify"
+    ]
+  },
+  "passed": false,
+  "status": "max_steps",
+  "answer": "Step limit reached before a verified answer was ready. Please narrow the question.",
+  "claims": [],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 304,
+      "action": "search_documents",
+      "args": {
+        "query": "What is the documented annual hosting budget?"
+      },
+      "note": "prompt_v1 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [],
+        "count": 0
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 374,
+      "action": "search_documents",
+      "args": {
+        "query": "What is the documented annual hosting budget?"
+      },
+      "note": "prompt_v1 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [],
+        "count": 0
+      }
+    },
+    {
+      "step": 3,
+      "context_chars": 511,
+      "action": "search_documents",
+      "args": {
+        "query": "What is the documented annual hosting budget?"
+      },
+      "note": "prompt_v1 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [],
+        "count": 0
+      }
+    },
+    {
+      "step": 4,
+      "context_chars": 648,
+      "action": "search_documents",
+      "args": {
+        "query": "What is the documented annual hosting budget?"
+      },
+      "note": "prompt_v1 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [],
+        "count": 0
+      }
+    }
+  ],
+  "evidence": {},
+  "usage": {
+    "input_tokens": 302,
+    "output_tokens": 185,
+    "total_tokens": 487,
+    "known_total_tokens": 487,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 79,
+        "output_tokens": 44,
+        "total_tokens": 123
+      },
+      {
+        "input_tokens": 77,
+        "output_tokens": 47,
+        "total_tokens": 124
+      },
+      {
+        "input_tokens": 74,
+        "output_tokens": 47,
+        "total_tokens": 121
+      },
+      {
+        "input_tokens": 72,
+        "output_tokens": 47,
+        "total_tokens": 119
+      }
+    ]
+  },
+  "termination_reason": "max_steps"
+}

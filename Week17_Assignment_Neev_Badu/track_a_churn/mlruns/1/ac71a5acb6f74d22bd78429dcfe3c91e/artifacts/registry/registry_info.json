@@ -1,0 +1,24 @@
+{
+  "model_name": "TelcoChurnBest",
+  "version": 1,
+  "source_run_id": "ac71a5acb6f74d22bd78429dcfe3c91e",
+  "selection_rule": "highest ROC-AUC, then F1",
+  "winning_metrics": {
+    "accuracy": 0.7518455423055083,
+    "precision": 0.5210084033613446,
+    "recall": 0.7965738758029979,
+    "f1": 0.6299745977984759,
+    "roc_auc": 0.8460775974767416
+  },
+  "stage_transitions": [
+    {
+      "stage": "Staging",
+      "timestamp_utc": "2026-09-26T15:29:24.740696+00:00"
+    },
+    {
+      "stage": "Production",
+      "timestamp_utc": "2026-09-26T15:29:24.755662+00:00"
+    }
+  ],
+  "alias": "champion"
+}

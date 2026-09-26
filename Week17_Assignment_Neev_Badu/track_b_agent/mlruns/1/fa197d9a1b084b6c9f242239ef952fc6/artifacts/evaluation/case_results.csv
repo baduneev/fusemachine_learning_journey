@@ -1,0 +1,6 @@
+case,status,passed,iterations,total_tokens
+simple,completed,True,3,416
+research,completed,True,3,506
+revision,abstained,False,3,418
+unsupported,abstained,True,2,272
+timeout,abstained,False,2,272

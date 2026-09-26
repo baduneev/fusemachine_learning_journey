@@ -1,0 +1,1099 @@
+{
+  "metrics": [
+    {
+      "metric": "DatasetDriftMetric",
+      "result": {
+        "drift_share": 0.5,
+        "number_of_columns": 20,
+        "number_of_drifted_columns": 3,
+        "share_of_drifted_columns": 0.15,
+        "dataset_drift": false
+      }
+    },
+    {
+      "metric": "DataDriftTable",
+      "result": {
+        "number_of_columns": 20,
+        "number_of_drifted_columns": 3,
+        "share_of_drifted_columns": 0.15,
+        "dataset_drift": false,
+        "drift_by_columns": {
+          "Churn": {
+            "column_name": "Churn",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.11208468392801328,
+            "drift_detected": true,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  1236,
+                  877
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  3622,
+                  1308
+                ]
+              }
+            }
+          },
+          "MonthlyCharges": {
+            "column_name": "MonthlyCharges",
+            "column_type": "num",
+            "stattest_name": "Wasserstein distance (normed)",
+            "stattest_threshold": 0.1,
+            "drift_score": 1.1276988281984983,
+            "drift_detected": true,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  42.18609834535255,
+                  53.72113677619129,
+                  65.25617520703003,
+                  76.79121363786878,
+                  88.32625206870752,
+                  99.86129049954626,
+                  111.39632893038501,
+                  122.93136736122375,
+                  134.4664057920625,
+                  146.00144422290123,
+                  157.53648265373997
+                ],
+                "y": [
+                  0.006933749726876037,
+                  0.012718712516754861,
+                  0.0038156137550264535,
+                  0.007179918356232583,
+                  0.009764688964476314,
+                  0.010626279167224209,
+                  0.013128993565682439,
+                  0.011939178523792468,
+                  0.008369733398122555,
+                  0.0022155176642089116
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  18.4,
+                  28.435,
+                  38.47,
+                  48.504999999999995,
+                  58.54,
+                  68.57499999999999,
+                  78.61,
+                  88.64500000000001,
+                  98.68,
+                  108.715,
+                  118.75
+                ],
+                "y": [
+                  0.022659030108615787,
+                  0.002748999192481487,
+                  0.005720343907884273,
+                  0.008489556329722236,
+                  0.0063469540179352055,
+                  0.012431136054236123,
+                  0.01374499596240742,
+                  0.012309856678097251,
+                  0.010854504164430581,
+                  0.004345844311643529
+                ]
+              }
+            }
+          },
+          "TotalCharges": {
+            "column_name": "TotalCharges",
+            "column_type": "num",
+            "stattest_name": "Wasserstein distance (normed)",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.041928118928756614,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  18.8,
+                  866.5900000000001,
+                  1714.3800000000003,
+                  2562.170000000001,
+                  3409.960000000001,
+                  4257.750000000001,
+                  5105.540000000002,
+                  5953.330000000002,
+                  6801.120000000002,
+                  7648.910000000002,
+                  8496.7
+                ],
+                "y": [
+                  0.00044155895498391296,
+                  0.00021324338913255973,
+                  0.00012839261649342596,
+                  8.708368770858462e-05,
+                  6.307985071198757e-05,
+                  7.536088359396739e-05,
+                  5.861402057308581e-05,
+                  5.582287673627219e-05,
+                  3.6284869878576926e-05,
+                  2.009623562505801e-05
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  18.85,
+                  885.4449999999999,
+                  1752.0399999999997,
+                  2618.6349999999998,
+                  3485.2299999999996,
+                  4351.825,
+                  5218.42,
+                  6085.014999999999,
+                  6951.61,
+                  7818.205,
+                  8684.8
+                ],
+                "y": [
+                  0.00044729865144371966,
+                  0.00019942357458401319,
+                  0.00010322276571778145,
+                  8.19228299347472e-05,
+                  7.934811242251224e-05,
+                  6.600639440456771e-05,
+                  6.507013349102781e-05,
+                  5.1962480701468195e-05,
+                  3.74504365415987e-05,
+                  2.2236196696574252e-05
+                ]
+              }
+            }
+          },
+          "tenure": {
+            "column_name": "tenure",
+            "column_type": "num",
+            "stattest_name": "Wasserstein distance (normed)",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.018301722279402,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  0.0,
+                  7.2,
+                  14.4,
+                  21.6,
+                  28.8,
+                  36.0,
+                  43.2,
+                  50.4,
+                  57.6,
+                  64.8,
+                  72.0
+                ],
+                "y": [
+                  0.032339485723300206,
+                  0.013803439028237892,
+                  0.011634327180943364,
+                  0.011502865856864912,
+                  0.009991060629962667,
+                  0.009728137981805749,
+                  0.008742178051217336,
+                  0.009991060629962661,
+                  0.011502865856864919,
+                  0.019653467949729185
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  0.0,
+                  7.2,
+                  14.4,
+                  21.6,
+                  28.8,
+                  36.0,
+                  43.2,
+                  50.4,
+                  57.6,
+                  64.8,
+                  72.0
+                ],
+                "y": [
+                  0.031552851025467656,
+                  0.015466531440162272,
+                  0.011071670047329276,
+                  0.010733603786342125,
+                  0.009663060626549471,
+                  0.009747577191796255,
+                  0.008986928104575168,
+                  0.009663060626549466,
+                  0.009184133423484342,
+                  0.022819472616632853
+                ]
+              }
+            }
+          },
+          "gender": {
+            "column_name": "gender",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.004996060243100251,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "Female",
+                  "Male"
+                ],
+                "y": [
+                  1036,
+                  1077
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "Female",
+                  "Male"
+                ],
+                "y": [
+                  2452,
+                  2478
+                ]
+              }
+            }
+          },
+          "SeniorCitizen": {
+            "column_name": "SeniorCitizen",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.0034852642710450224,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  1765,
+                  348
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  4136,
+                  794
+                ]
+              }
+            }
+          },
+          "Partner": {
+            "column_name": "Partner",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.0044730362885112285,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  1083,
+                  1030
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  2558,
+                  2372
+                ]
+              }
+            }
+          },
+          "Dependents": {
+            "column_name": "Dependents",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.0051960221517072915,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  1470,
+                  643
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  3463,
+                  1467
+                ]
+              }
+            }
+          },
+          "PhoneService": {
+            "column_name": "PhoneService",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.015225350989601035,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  186,
+                  1927
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  496,
+                  4434
+                ]
+              }
+            }
+          },
+          "MultipleLines": {
+            "column_name": "MultipleLines",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.017223779839297678,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No phone service",
+                  "Yes"
+                ],
+                "y": [
+                  1043,
+                  186,
+                  884
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No phone service",
+                  "Yes"
+                ],
+                "y": [
+                  2347,
+                  496,
+                  2087
+                ]
+              }
+            }
+          },
+          "InternetService": {
+            "column_name": "InternetService",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.005302215551654814,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "DSL",
+                  "Fiber optic",
+                  "No"
+                ],
+                "y": [
+                  736,
+                  919,
+                  458
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "DSL",
+                  "Fiber optic",
+                  "No"
+                ],
+                "y": [
+                  1685,
+                  2177,
+                  1068
+                ]
+              }
+            }
+          },
+          "OnlineSecurity": {
+            "column_name": "OnlineSecurity",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.005424664612299852,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  1059,
+                  458,
+                  596
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  2439,
+                  1068,
+                  1423
+                ]
+              }
+            }
+          },
+          "OnlineBackup": {
+            "column_name": "OnlineBackup",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.010704292906784272,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  946,
+                  458,
+                  709
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  2142,
+                  1068,
+                  1720
+                ]
+              }
+            }
+          },
+          "DeviceProtection": {
+            "column_name": "DeviceProtection",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.014471301867288589,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  955,
+                  458,
+                  700
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  2140,
+                  1068,
+                  1722
+                ]
+              }
+            }
+          },
+          "TechSupport": {
+            "column_name": "TechSupport",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.011299622122909681,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  1062,
+                  458,
+                  593
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  2411,
+                  1068,
+                  1451
+                ]
+              }
+            }
+          },
+          "StreamingTV": {
+            "column_name": "StreamingTV",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.024894481510755382,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  889,
+                  458,
+                  766
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  1921,
+                  1068,
+                  1941
+                ]
+              }
+            }
+          },
+          "StreamingMovies": {
+            "column_name": "StreamingMovies",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.010022751272528064,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  854,
+                  458,
+                  801
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "No internet service",
+                  "Yes"
+                ],
+                "y": [
+                  1931,
+                  1068,
+                  1931
+                ]
+              }
+            }
+          },
+          "Contract": {
+            "column_name": "Contract",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.19030518423515602,
+            "drift_detected": true,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "Month-to-month",
+                  "One year",
+                  "Two year"
+                ],
+                "y": [
+                  1687,
+                  204,
+                  222
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "Month-to-month",
+                  "One year",
+                  "Two year"
+                ],
+                "y": [
+                  2704,
+                  1034,
+                  1192
+                ]
+              }
+            }
+          },
+          "PaperlessBilling": {
+            "column_name": "PaperlessBilling",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.0001747295815899024,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  862,
+                  1251
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "No",
+                  "Yes"
+                ],
+                "y": [
+                  2010,
+                  2920
+                ]
+              }
+            }
+          },
+          "PaymentMethod": {
+            "column_name": "PaymentMethod",
+            "column_type": "cat",
+            "stattest_name": "Jensen-Shannon distance",
+            "stattest_threshold": 0.1,
+            "drift_score": 0.0039226715359762165,
+            "drift_detected": false,
+            "current": {
+              "small_distribution": {
+                "x": [
+                  "Bank transfer (automatic)",
+                  "Credit card (automatic)",
+                  "Electronic check",
+                  "Mailed check"
+                ],
+                "y": [
+                  458,
+                  455,
+                  711,
+                  489
+                ]
+              }
+            },
+            "reference": {
+              "small_distribution": {
+                "x": [
+                  "Bank transfer (automatic)",
+                  "Credit card (automatic)",
+                  "Electronic check",
+                  "Mailed check"
+                ],
+                "y": [
+                  1086,
+                  1067,
+                  1654,
+                  1123
+                ]
+              }
+            }
+          }
+        },
+        "current_fi": null,
+        "reference_fi": null
+      }
+    },
+    {
+      "metric": "ColumnDriftMetric",
+      "result": {
+        "column_name": "Churn",
+        "column_type": "cat",
+        "stattest_name": "Jensen-Shannon distance",
+        "stattest_threshold": 0.1,
+        "drift_score": 0.11208468392801328,
+        "drift_detected": true,
+        "current": {
+          "small_distribution": {
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              1236,
+              877
+            ]
+          }
+        },
+        "reference": {
+          "small_distribution": {
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              3622,
+              1308
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metric": "ColumnCorrelationsMetric",
+      "result": {
+        "column_name": "Churn",
+        "current": {
+          "cramer_v": {
+            "column_name": "Churn",
+            "kind": "cramer_v",
+            "values": {
+              "x": [
+                "gender",
+                "SeniorCitizen",
+                "Partner",
+                "Dependents",
+                "PhoneService",
+                "MultipleLines",
+                "InternetService",
+                "OnlineSecurity",
+                "OnlineBackup",
+                "DeviceProtection",
+                "TechSupport",
+                "StreamingTV",
+                "StreamingMovies",
+                "Contract",
+                "PaperlessBilling",
+                "PaymentMethod"
+              ],
+              "y": [
+                0.01922970139030135,
+                0.11798804560872267,
+                0.1104929083905911,
+                0.09994309790706284,
+                0.0027145259467434716,
+                0.021293385810143235,
+                0.24018886412280172,
+                0.24371034546295484,
+                0.2106829480995303,
+                0.2131682176486329,
+                0.23387617278066472,
+                0.17475313028603515,
+                0.18261928949283127,
+                0.15092303791640194,
+                0.12463611404227909,
+                0.2129734177616684
+              ]
+            }
+          }
+        },
+        "reference": {
+          "cramer_v": {
+            "column_name": "Churn",
+            "kind": "cramer_v",
+            "values": {
+              "x": [
+                "gender",
+                "SeniorCitizen",
+                "Partner",
+                "Dependents",
+                "PhoneService",
+                "MultipleLines",
+                "InternetService",
+                "OnlineSecurity",
+                "OnlineBackup",
+                "DeviceProtection",
+                "TechSupport",
+                "StreamingTV",
+                "StreamingMovies",
+                "Contract",
+                "PaperlessBilling",
+                "PaymentMethod"
+              ],
+              "y": [
+                0.005100612650522885,
+                0.1441616119942185,
+                0.1501813145279131,
+                0.17205703895401206,
+                0.023820001616836384,
+                0.048009901810881425,
+                0.3245713398490947,
+                0.35271647374924325,
+                0.29883693408298295,
+                0.2842382639096915,
+                0.3478981018856239,
+                0.23572205960281542,
+                0.23598672060528128,
+                0.41207826195098357,
+                0.2040784698160294,
+                0.30985074389270695
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "metric": "TargetByFeaturesTable",
+      "result": {}
+    },
+    {
+      "metric": "ColumnDriftMetric",
+      "result": {
+        "column_name": "MonthlyCharges",
+        "column_type": "num",
+        "stattest_name": "Wasserstein distance (normed)",
+        "stattest_threshold": 0.1,
+        "drift_score": 1.1276988281984983,
+        "drift_detected": true,
+        "current": {
+          "small_distribution": {
+            "x": [
+              42.18609834535255,
+              53.72113677619129,
+              65.25617520703003,
+              76.79121363786878,
+              88.32625206870752,
+              99.86129049954626,
+              111.39632893038501,
+              122.93136736122375,
+              134.4664057920625,
+              146.00144422290123,
+              157.53648265373997
+            ],
+            "y": [
+              0.006933749726876037,
+              0.012718712516754861,
+              0.0038156137550264535,
+              0.007179918356232583,
+              0.009764688964476314,
+              0.010626279167224209,
+              0.013128993565682439,
+              0.011939178523792468,
+              0.008369733398122555,
+              0.0022155176642089116
+            ]
+          }
+        },
+        "reference": {
+          "small_distribution": {
+            "x": [
+              18.4,
+              28.435,
+              38.47,
+              48.504999999999995,
+              58.54,
+              68.57499999999999,
+              78.61,
+              88.64500000000001,
+              98.68,
+              108.715,
+              118.75
+            ],
+            "y": [
+              0.022659030108615787,
+              0.002748999192481487,
+              0.005720343907884273,
+              0.008489556329722236,
+              0.0063469540179352055,
+              0.012431136054236123,
+              0.01374499596240742,
+              0.012309856678097251,
+              0.010854504164430581,
+              0.004345844311643529
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metric": "ColumnDriftMetric",
+      "result": {
+        "column_name": "Contract",
+        "column_type": "cat",
+        "stattest_name": "Jensen-Shannon distance",
+        "stattest_threshold": 0.1,
+        "drift_score": 0.19030518423515602,
+        "drift_detected": true,
+        "current": {
+          "small_distribution": {
+            "x": [
+              "Month-to-month",
+              "One year",
+              "Two year"
+            ],
+            "y": [
+              1687,
+              204,
+              222
+            ]
+          }
+        },
+        "reference": {
+          "small_distribution": {
+            "x": [
+              "Month-to-month",
+              "One year",
+              "Two year"
+            ],
+            "y": [
+              2704,
+              1034,
+              1192
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metric": "ColumnDriftMetric",
+      "result": {
+        "column_name": "Churn",
+        "column_type": "cat",
+        "stattest_name": "Jensen-Shannon distance",
+        "stattest_threshold": 0.1,
+        "drift_score": 0.11208468392801328,
+        "drift_detected": true,
+        "current": {
+          "small_distribution": {
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              1236,
+              877
+            ]
+          }
+        },
+        "reference": {
+          "small_distribution": {
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              3622,
+              1308
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metric": "MeanShiftMetric",
+      "result": {
+        "column_name": "MonthlyCharges",
+        "reference_mean": 64.95008113590264,
+        "current_mean": 99.0523773936653,
+        "absolute_shift": 34.10229625776266,
+        "relative_shift_pct": 52.505394391127005
+      }
+    }
+  ]
+}

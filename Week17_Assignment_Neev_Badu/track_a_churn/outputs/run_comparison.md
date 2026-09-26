@@ -1,0 +1,5 @@
+| run_id                           | run_name                  | family        |        C | penalty   |   accuracy |   precision |   recall |     f1 |   roc_auc |   train_seconds |   n_estimators |   max_depth |   min_samples_leaf |
+|:---------------------------------|:--------------------------|:--------------|---------:|:----------|-----------:|------------:|---------:|-------:|----------:|----------------:|---------------:|------------:|-------------------:|
+| ac71a5acb6f74d22bd78429dcfe3c91e | logistic_c_0_5            | logistic      |   0.5000 | l2        |     0.7518 |      0.5210 |   0.7966 | 0.6300 |    0.8461 |          0.0724 |       nan      |    nan      |           nan      |
+| 5812d37aa11b4fc79d9f46c3ca68020a | logistic_c_2              | logistic      |   2.0000 | l2        |     0.7501 |      0.5188 |   0.7966 | 0.6284 |    0.8459 |          0.0728 |       nan      |    nan      |           nan      |
+| 409be45552664bcea23e0c9eb94cda42 | random_forest_300_depth_8 | random_forest | nan      | nan       |     0.7649 |      0.5391 |   0.7816 | 0.6381 |    0.8448 |          0.5675 |       300.0000 |      8.0000 |             3.0000 |

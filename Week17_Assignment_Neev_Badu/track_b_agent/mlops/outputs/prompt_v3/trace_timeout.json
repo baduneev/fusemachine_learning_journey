@@ -1,0 +1,143 @@
+{
+  "case": {
+    "id": "timeout",
+    "query": "Which framework controls Chromium after a search outage?",
+    "expected": [
+      "completed",
+      "abstained"
+    ],
+    "terms": [
+      "playwright"
+    ],
+    "failure": "search_unavailable"
+  },
+  "passed": true,
+  "status": "completed",
+  "answer": "- The runner shall launch and control Chromium through Playwright. [E1]",
+  "claims": [
+    {
+      "text": "The runner shall launch and control Chromium through Playwright.",
+      "source_id": "E1",
+      "quote": "The runner shall launch and control Chromium through Playwright."
+    }
+  ],
+  "trajectory": [
+    {
+      "step": 1,
+      "context_chars": 315,
+      "action": "search_documents",
+      "args": {
+        "query": "Which framework controls Chromium after a search outage?"
+      },
+      "note": "prompt_v3 observed ['sources'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": false,
+      "observation": {
+        "error": "tool_failure",
+        "tool": "search_documents",
+        "type": "TimeoutError",
+        "detail": "Tool unavailable or invalid output; do not rely on this call."
+      }
+    },
+    {
+      "step": 2,
+      "context_chars": 506,
+      "action": "read_source",
+      "args": {
+        "source": "sample.pdf",
+        "page": 6
+      },
+      "note": "prompt_v3 observed ['error', 'tool'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": [
+        {
+          "source": "sample.pdf",
+          "page": 6,
+          "text": "The runner shall launch and control Chromium through Playwright."
+        }
+      ],
+      "ok": true,
+      "observation": {
+        "evidence_ids": [
+          "E1"
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 3,
+      "context_chars": 644,
+      "action": "verify_claims",
+      "args": {
+        "claims": [
+          {
+            "text": "The runner shall launch and control Chromium through Playwright.",
+            "source_id": "E1",
+            "quote": "The runner shall launch and control Chromium through Playwright."
+          }
+        ]
+      },
+      "note": "prompt_v3 observed ['evidence_ids', 'count'] and selected the next bounded action",
+      "arguments_valid": true,
+      "raw_result": {
+        "valid": true,
+        "problems": [],
+        "scope": "Source/quote integrity only; model must check meaning and contradictions."
+      },
+      "ok": true,
+      "observation": {
+        "valid": true,
+        "problems": [],
+        "scope": "Source/quote integrity only; model must check meaning and contradictions."
+      }
+    },
+    {
+      "step": 4,
+      "context_chars": 859,
+      "action": "finish",
+      "args": {},
+      "note": "prompt_v3 observed ['valid', 'problems'] and selected the next bounded action",
+      "arguments_valid": true,
+      "ok": true
+    }
+  ],
+  "evidence": {
+    "E1": {
+      "source_id": "E1",
+      "source": "sample.pdf",
+      "page": 6,
+      "text": "The runner shall launch and control Chromium through Playwright."
+    }
+  },
+  "usage": {
+    "input_tokens": 758,
+    "output_tokens": 194,
+    "total_tokens": 952,
+    "known_total_tokens": 952,
+    "accounting_complete": true,
+    "kind": "synthetic_prompt_experiment_tokens",
+    "calls": [
+      {
+        "input_tokens": 193,
+        "output_tokens": 47,
+        "total_tokens": 240
+      },
+      {
+        "input_tokens": 191,
+        "output_tokens": 38,
+        "total_tokens": 229
+      },
+      {
+        "input_tokens": 188,
+        "output_tokens": 79,
+        "total_tokens": 267
+      },
+      {
+        "input_tokens": 186,
+        "output_tokens": 30,
+        "total_tokens": 216
+      }
+    ]
+  },
+  "termination_reason": "completed"
+}
