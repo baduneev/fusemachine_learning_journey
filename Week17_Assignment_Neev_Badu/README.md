@@ -7,7 +7,7 @@ This submission implements both mandatory tracks from the assignment. Each track
 - [Track A: Data Science MLOps](https://github.com/baduneev/fusemachine_learning_journey/tree/main/Week17_Assignment_Neev_Badu/track_a_churn)
 - [Track B: Agentic AI MLOps](https://github.com/baduneev/fusemachine_learning_journey/tree/main/Week17_Assignment_Neev_Badu/track_b_agent)
 
-These public links were verified on the `main` branch on 26 September 2026.
+
 
 ## What the assignment does
 
