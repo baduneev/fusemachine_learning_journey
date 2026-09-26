@@ -7,7 +7,7 @@ This submission implements both mandatory tracks from the assignment. Each track
 - [Track A: Data Science MLOps](https://github.com/baduneev/fusemachine_learning_journey/tree/main/Week17_Assignment_Neev_Badu/track_a_churn)
 - [Track B: Agentic AI MLOps](https://github.com/baduneev/fusemachine_learning_journey/tree/main/Week17_Assignment_Neev_Badu/track_b_agent)
 
-The links become available after this folder is committed and pushed to the `main` branch.
+These public links were verified on the `main` branch on 26 September 2026.
 
 ## What the assignment does
 
@@ -57,7 +57,7 @@ flowchart LR
 
 | Requirement | Evidence |
 |---|---|
-| Formatted submission report | `Week17_Assignment_Deliverables_Report.docx` |
+| Formatted submission report | `Week17_Assignment_Deliverables_Report_Final.docx` |
 | Separate reproducible environments | `pyproject.toml`, `.python-version`, and `uv.lock` in each track |
 | Track A MLflow comparison | `track_a_churn/outputs/run_comparison.md` and local `mlruns.db` |
 | Registered model and stages | `track_a_churn/outputs/registry_info.json` |
